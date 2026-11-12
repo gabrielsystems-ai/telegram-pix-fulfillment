@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telegram-pix-fulfillment"
+version = "0.1.0"
+description = "Telegram digital fulfillment with Pushin Pay Pix and PostgreSQL"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+dependencies = [
+  "aiogram>=3.20,<4",
+  "fastapi>=0.115,<1",
+  "uvicorn>=0.34,<1",
+  "SQLAlchemy>=2.0.40,<2.1",
+  "alembic>=1.15,<2",
+  "httpx>=0.28,<1",
+  "pydantic-settings>=2.8,<3",
+  "psycopg[binary]>=3.2,<4",
+  "qrcode[png]>=8.2,<9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<10", "pytest-asyncio>=0.25,<2", "ruff>=0.11,<1", "pytest-socket>=0.7,<1", "pip-licenses>=5,<6", "pip-audit>=2.9,<3"]
+
+[project.scripts]
+vip = "vip.cli:main"
+pix-fulfillment = "vip.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

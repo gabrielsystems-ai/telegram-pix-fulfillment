@@ -1,0 +1,1 @@
+"""Telegram VIP membership foundation."""

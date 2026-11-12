@@ -1,0 +1,8 @@
+include README.md LICENSE THIRD_PARTY_NOTICES.md
+include uv.lock alembic.ini .env.example .python-version Dockerfile .dockerignore
+recursive-include alembic *.py *.mako
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include docs *.md
+recursive-include examples *.json
+global-exclude *.pyc *.pyo

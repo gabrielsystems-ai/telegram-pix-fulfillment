@@ -1,0 +1,5 @@
+{
+  "sample_video": {"name": "Sample digital video", "amount_minor": 1000},
+  "vip_permanent": {"name": "Community access", "amount_minor": 2000},
+  "recovery_bundle": {"name": "Optional recovery bundle", "amount_minor": 2500}
+}
